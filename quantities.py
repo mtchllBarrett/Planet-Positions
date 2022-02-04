@@ -1,4 +1,4 @@
-# this file just exists to reduce clutter in the main program
+# this file just exists to reduce clutter in other places
 
 from astropy.time import Time
 

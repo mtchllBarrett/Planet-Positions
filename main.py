@@ -1,5 +1,6 @@
 from astropy.time import Time
 from planets import Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+from plot import mkfig
 
 def main():
 
@@ -13,7 +14,10 @@ def main():
                                     # video of Tom Scott warning people not to 
                                     # attempt such a thing).
     
-    t = Time(t_str)             # t_str as an Time object
+    make_plots = True                # if you want to make a plot, set to True
+                                    # turn off to lower runtime for testing
+
+    t = Time(t_str)                 # t_str as an Time object
     
     Mercury.update(t)
     Venus.update(t)
@@ -23,7 +27,28 @@ def main():
     Saturn.update(t)
     Uranus.update(t)
     Neptune.update(t)
-
+    
+    if make_plots:
+        
+        mkfig(t_str,
+              
+              Mercury,
+              Venus,
+              Earth,
+              Mars,
+              Jupiter,
+              Saturn,
+              Uranus,
+              Neptune)
+        
+        # it's hard to see inner planets from Neptune, so I include a second plot
+        mkfig(t_str,
+              
+              Mercury,
+              Venus,
+              Earth,
+              Mars)
+    
     return 0
 
 if __name__ == '__main__':

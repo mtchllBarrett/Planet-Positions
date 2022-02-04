@@ -1,4 +1,4 @@
-# defines the Planet class and initializes the planets in our solar system with appropriate data
+# defines the Planet object and sets all the important data for each planet
 
 # this data was taken from a text file
 # I wanted to just load it all in using np.loadtxt, but it didn't behave nicely...
@@ -9,9 +9,10 @@ from quantities import J2000, Cy
 
 class Planet:
     
-    def __init__(self, name, a,e,I,L,ap,ln,da,de,dI,dL,dap,dln):
+    def __init__(self, name, hexcolor, a,e,I,L,ap,ln,da,de,dI,dL,dap,dln):
         
         self.name = name
+        self.hexcolor = hexcolor
         
         self.a_J2000 = a # semimajor axis                            [AU]
         self.e_J2000 = e # eccentricity
@@ -58,6 +59,7 @@ class Planet:
         self.r = get_r(self.a, self.e, self.E)      # distance from sun [AU]
 
 Mercury = Planet('Mercury',
+                 '#696363',
                  0.38709927,
                  0.20563593,
                  7.00497902,
@@ -72,6 +74,7 @@ Mercury = Planet('Mercury',
                 -0.12534081)
 
 Venus = Planet('Venus',
+               '#D5A63F',
                0.72333566,
                0.00677672,
                3.39467605,
@@ -86,6 +89,7 @@ Venus = Planet('Venus',
               -0.27769418)
 
 Earth = Planet('Earth',
+               '#254EA3',
                1.00000261,
                0.01671123,
               -0.00001531,
@@ -100,6 +104,7 @@ Earth = Planet('Earth',
                0.00000000)
 
 Mars = Planet('Mars',
+              '#F6805A',
               1.52371034,
               0.09339410,
               1.84969142,
@@ -114,6 +119,7 @@ Mars = Planet('Mars',
              -0.29257343)
 
 Jupiter = Planet('Jupiter',
+                 '#A0735D',
                  5.20288700,
                  0.04838624,
                  1.30439695,
@@ -128,6 +134,7 @@ Jupiter = Planet('Jupiter',
                  0.20469106)
 
 Saturn = Planet('Saturn',
+                '#D0B470',
                 9.53667594,
                 0.05386179,
                 2.48599187,
@@ -142,6 +149,7 @@ Saturn = Planet('Saturn',
                -0.28867794)
 
 Uranus = Planet('Uranus',
+                '#98BCC2',
                19.18916464,
                 0.04725744,
                 0.77263783,
@@ -156,6 +164,7 @@ Uranus = Planet('Uranus',
                 0.04240589)
 
 Neptune = Planet('Neptune',
+                 '#3D5CF4',
                 30.06992276,
                  0.00859048,
                  1.77004347,
