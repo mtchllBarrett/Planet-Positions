@@ -1,4 +1,4 @@
-# defines the Planet object and sets all the important data for each planet
+# defines the Planet class and initializes the planets in our solar system with appropriate data
 
 # this data was taken from a text file
 # I wanted to just load it all in using np.loadtxt, but it didn't behave nicely...
