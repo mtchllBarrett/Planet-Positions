@@ -3,8 +3,8 @@ from planets import Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptun
 from plot import mkfig
 
 def main():
-
-    t_str = '2022-02-01 18:50:00'   # t_str is the time of interest as an ISO date, 
+    
+    t_str = '2022-08-05 18:50:00'   # t_str is the time of interest as an ISO date, 
                                     # entered as a string. The time zone is UTC.
                                     # Ideally this would set via input from the 
                                     # user somehow. Perhaps there could also be a
@@ -14,19 +14,24 @@ def main():
                                     # video of Tom Scott warning people not to 
                                     # attempt such a thing).
     
-    make_plots = True                # if you want to make a plot, set to True
+    make_plots = True               # if you want to make a plot, set to True
                                     # turn off to lower runtime for testing
 
-    t = Time(t_str)                 # t_str as an Time object
+    t = Time(t_str)                 # t_str (or now) as an Time object
     
-    Mercury.update(t)
-    Venus.update(t)
-    Earth.update(t)
-    Mars.update(t)
-    Jupiter.update(t)
-    Saturn.update(t)
-    Uranus.update(t)
-    Neptune.update(t)
+    now = Time.now()                # current time; in case you don't have a specific
+                                    # time in mind, you can use this instead
+    
+    time_to_use = now
+    
+    Mercury.update(time_to_use)
+    Venus.update(time_to_use)
+    Earth.update(time_to_use)
+    Mars.update(time_to_use)
+    Jupiter.update(time_to_use)
+    Saturn.update(time_to_use)
+    Uranus.update(time_to_use)
+    Neptune.update(time_to_use)
     
     if make_plots:
         
