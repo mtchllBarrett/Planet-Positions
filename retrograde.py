@@ -3,7 +3,6 @@ import numpy as np
 from astropy.time import Time
 from copy import copy
 from planets import Mercury, Venus, Earth, Mars, Jupiter, Saturn
-import pdb
 
 def observed_positions(*Planets, Ref):
     
